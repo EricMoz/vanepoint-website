@@ -1,45 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-    
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Eric Moczydlowski's VanePoint Analytics: Data-driven insights for finance, DeFi, and analytics. Explore my portfolio and consulting services.">
+    <meta name="keywords" content="Eric Moczydlowski, VanePoint, analytics, data analyst, analytical engineer, finance, DeFi, portfolio, open to work">
+    <meta name="author" content="Eric Moczydlowski">
     <title>VanePoint Analytics</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20250720">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <!-- Navigation -->
     <nav>
         <div class="logo">VanePoint Analytics</div>
-        <ul>
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#consulting">Consulting</a></li>
-            <li><a href="#art">Art Projects</a></li>
-        </ul>
+        <div class="nav-links">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#consulting">Consulting</a></li>
+                <li><a href="#art">Art Projects</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </div>
+        <button class="hamburger" aria-label="Toggle Navigation Menu" aria-expanded="false" onclick="toggleMenu()">
+            <i class="fas fa-bars"></i>
+        </button>
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section id="home" class="hero animate-on-scroll">
         <h1>Welcome to VanePoint Analytics</h1>
         <p>Data-driven insights for a smarter future.</p>
     </section>
 
-    <!-- About Me Section -->
-    <section id="about" class="about">
+    <!-- About Me Section with Business Card -->
+    <section id="about" class="about animate-on-scroll">
         <h2>About Me</h2>
-        <img src="aboutme_portfolio_picture.jpg" alt="Eric's Profile Picture" class="profile-img">
+        <div class="business-card">
+            <div class="card-inner">
+                <div class="card-front">
+                    <img src="images/aboutme_portfolio_picture.jpg" alt="Eric Moczydlowski's Profile Picture" class="profile-img">
+                    <h3>Eric Moczydlowski</h3>
+                    <p>Data Analyst & Analytical Engineer</p>
+                    <div class="logo-vp">VP</div>
+                </div>
+                <div class="card-back">
+                    <h3>Contact Me</h3>
+                    <p>Email: <a href="mailto:eric@vanepoint.com" class="btn">eric@vanepoint.com</a></p>
+                    <p>Connect: <a href="https://www.linkedin.com/in/ericmoz/" target="_blank" class="btn">LinkedIn</a></p>
+                    <form id="contact-form">
+                        <input type="text" name="name" placeholder="Your Name" required>
+                        <input type="email" name="email" placeholder="Your Email" required>
+                        <textarea name="message" placeholder="Your Message" required></textarea>
+                        <button type="submit" class="btn">Send</button>                        
+                    </form>
+                </div>
+            </div>
+        </div>
         <p>Hi, I'm Eric, an analytical engineer passionate about transforming data into actionable insights using Python, SQL, and Tableau. I specialize in building efficient data pipelines and visualizations to drive decision-making. Explore my work and connect with me!</p>
-        <div class="buttons">
-            <a href="https://www.linkedin.com/in/your-linkedin-profile" target="_blank" class="btn">LinkedIn Profile</a>
-            <a href="https://github.com/EricMoz/zhvi-TN-housing-trends" target="_blank" class="btn">ETL Project: TN Housing Trends</a>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="projects" class="projects animate-on-scroll">
+        <h2>Portfolio Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <img src="images/tn_zhvi_explorer.png" alt="ZHMI Explorer by Eric Moczydlowski">
+                <h3>ZHMI Explorer</h3>
+                <p>Python ETL pipeline for analyzing Tennessee housing trends with SQLite and interactive Tableau dashboard.</p>
+                <a href="https://github.com/EricMoz/zhvi-TN-housing-trends" target="_blank" class="btn">View Project</a>
+            </div>
+            <div class="project-card">
+                <img src="images/project2.jpg" alt="Placeholder Project">
+                <h3>Project Title 2</h3>
+                <p>Brief description of the project, highlighting key technologies and outcomes.</p>
+                <a href="#" class="btn">View Project</a>
+            </div>
         </div>
     </section>
 
-    <!-- Art Projects Section (daCAT Placeholder) -->
-    <section id="art" class="art">
+    <!-- Latest Insights (Blog Preview) -->
+    <section id="blog-preview" class="blog-preview animate-on-scroll">
+        <h2>Latest Insights</h2>
+        <div class="blog-grid">
+            <div class="blog-card">
+                <h3>Excel Skills for Career Growth</h3>
+                <p>Learn three levels of Excel functions to boost your career, from beginner to advanced techniques.</p>
+                <a href="blog.html#excel-skills" class="btn">Read More</a>
+            </div>
+            <!-- Add more blog cards dynamically via JS in future -->
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials animate-on-scroll">
+        <h2>Testimonials</h2>
+        <p>Share your experience working with Eric!</p>
+        <form id="testimonial-form" class="testimonial-card">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="text" name="role" placeholder="Your Role (e.g., Client, Colleague)" required>
+            <textarea name="testimonial" placeholder="Your thoughts on Eric's work..." required></textarea>
+            <button type="submit" class="btn">Submit</button>
+        </form>
+    </section>
+
+    <!-- Consulting Section -->
+    <section id="consulting" class="consulting animate-on-scroll">
+        <h2>Consulting Services</h2>
+        <p>Offering expert consulting in data analytics, pipeline automation, and visualization. Contact me to discuss how I can help your business thrive.</p>
+        <a href="mailto:eric@vanepoint.com" class="btn">Get in Touch</a>
+    </section>
+
+    <!-- Art Projects Section -->
+    <section id="art" class="art animate-on-scroll">
         <h2>Creative Data Projects</h2>
         <p>Exciting community-driven art and data projects coming soon!</p>
     </section>
@@ -48,5 +124,7 @@
     <footer>
         <p>© 2025 VanePoint Analytics. All rights reserved.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
