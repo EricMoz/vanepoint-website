@@ -12,6 +12,7 @@ body {
     background-color: transparent;
     position: relative;
     overflow-x: hidden;
+    overflow-y: auto; /* Ensure vertical scrolling */
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -111,15 +112,21 @@ nav .hamburger {
 }
 
 /* Hero Section */
+#home {
+    scroll-margin-top: 70px; /* Match nav height for anchor scrolling */
+}
 .hero {
-    margin-top: 60px;
-    margin-bottom: 3rem; /* Increased for gap */
+    margin-top: 70px; /* Match 70px nav to eliminate gap */
+    margin-bottom: 3rem;
     text-align: center;
     width: 100%;
+    position: relative; /* Ensure .hero::before is contained */
 }
 
 .hero .section-content {
     background-color: #fff;
+    position: relative; /* Ensure content is above ::before */
+    z-index: 1; /* Above .hero::before */
 }
 
 .hero::before {
@@ -130,7 +137,7 @@ nav .hamburger {
     width: 100%;
     height: 100%;
     background: linear-gradient(to bottom, rgba(0, 128, 128, 0.1), transparent);
-    z-index: -1;
+    z-index: -1; /* Below .section-content */
     transform: translateZ(0);
     animation: hero-parallax 30s linear infinite;
 }
@@ -316,7 +323,7 @@ nav .hamburger {
 
 /* Blog Preview Section */
 .blog-preview {
-    margin-top: 60px;
+    margin-top: 70px; /* Match nav height */
     margin-bottom: 3rem;
     text-align: center;
     width: 100%;
@@ -327,7 +334,7 @@ nav .hamburger {
 }
 
 .blog {
-    margin-top: 60px;
+    margin-top: 70px; /* Match nav height */
     margin-bottom: 3rem;
     text-align: center;
     width: 100%;
