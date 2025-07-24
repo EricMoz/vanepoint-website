@@ -15,17 +15,6 @@ document.addEventListener('keydown', (event) => {
     }
 });
 
-window.addEventListener('scroll', () => {
-    const elements = document.querySelectorAll('.animate-on-scroll');
-    elements.forEach(el => {
-        const position = el.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-        if (position < windowHeight - 100) {
-            el.classList.add('visible');
-        }
-    });
-});
-
 if (businessCard) {
     businessCard.addEventListener('click', () => {
         businessCard.classList.toggle('touched');
@@ -33,6 +22,12 @@ if (businessCard) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Make all animate-on-scroll elements visible immediately
+    const elements = document.querySelectorAll('.animate-on-scroll');
+    elements.forEach(el => {
+        el.classList.add('visible');
+    });
+
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
