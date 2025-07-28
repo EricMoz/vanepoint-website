@@ -314,11 +314,31 @@ nav .hamburger {
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.3s ease;
+    margin: 0.5rem;
 }
 
 .project-card .btn:hover {
     background-color: #003366;
     transform: translateY(-2px);
+}
+
+/* Secondary button for View Marketing */
+.project-card .btn-secondary {
+    background-color: #008080; /* Teal to match gradient */
+    color: #fff;
+}
+
+.project-card .btn-secondary:hover {
+    background-color: #005b5b; /* Darker teal */
+    transform: translateY(-2px);
+}
+
+/* Button group for layout */
+.project-card .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
 }
 
 /* Blog Preview Section */
